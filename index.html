@@ -211,7 +211,6 @@ input#linkAlternatif {
   font-family: Arial, sans-serif;
 }
 
-/* Memberi sedikit penanda border tipis saat admin mengklik kolom teks untuk mengubahnya */
 input#linkAlternatif:focus {
   border-bottom: 2px dashed rgba(197, 160, 89, 0.5);
 }
@@ -342,9 +341,10 @@ function updatePrediksi() {
   document.getElementById("bbfs").innerText = Array.from({length: 7}, () => Math.floor(Math.random()*10)).join("");
   document.getElementById("am").innerText = Array.from({length: 5}, () => Math.floor(Math.random()*10)).join("");
   
-  document.getElementById("d4").innerText = set(4, 2);
-  document.getElementById("d3").innerText = set(3, 2);
-  document.getElementById("d2").innerText = set(2, 6);
+  // DIPERBARUI: Sekarang 4D, 3D, dan 2D masing-masing menghasilkan tepat 4 pilihan kombinasi angka
+  document.getElementById("d4").innerText = set(4, 4);
+  document.getElementById("d3").innerText = set(3, 4);
+  document.getElementById("d2").innerText = set(2, 4);
   
   document.getElementById("cb").innerText = Math.floor(Math.random() * 10) + " / " + Math.floor(Math.random() * 10);
   document.getElementById("cm").innerText = rand(2) + " / " + rand(2);
@@ -355,16 +355,16 @@ function updatePrediksi() {
   document.getElementById("tw").innerText = `${t1}${t1} / ${t2}${t2}`;
   
   const syairBanyak = [
-    "Burung nuri terbang ke dahan,\nSinggah sebentar mencari makan.\nAngka sakti sudah tertahan,\nSemoga JP jadi kenyataan.",
-    "Ke pasar baru membeli baju,\nBaju biru indah warnanya.\nNiat hati terus melaju,\nAngka jitu jadi kuncinya.",
-    "Malam hari bintang bersinar,\nCahaya terang di ufuk timur.\nMencari angka janganlah gentar,\nRezeki datang saat tertidur.",
-    "Kapal berlayar ke tengah laut,\nMenerjang ombak tiada henti.\nAngka main janganlah luput,\nKeberuntungan menanti di hati.",
-    "Pergi ke sawah menanam padi,\nPadi tumbuh hijau berseri.\nPasanglah angka dengan teliti,\nKemenangan mutlak sudah memberi.",
-    "Awan putih berarak tenang,\nAngin bertiup sepoi bahasa.\nHati mantap pasti menang,\nAngka pilihan jadi kuasa.",
-    "Gunung tinggi puncaknya biru,\nTempat bermukim para dewata.\nAngka keramat sudah menunggu,\nMenghapus duka menjadi tawa.",
-    "Makan sirih di dalam puan,\nSirih dikunyah bersama teman.\nJP paus jadi impian,\nAngka tarung jadi pedoman.",
-    "Surya muncul di balik bukit,\nMenyinari bumi dengan perkasa.\nBukan angka sembarang rakit,\nTapi angka penembus masa.",
-    "Bunga mawar merah merona,\nHarum semerbak di taman hati.\nAngka ini sungguh mempesona,\nSiap meledak sebentar nanti."
+    "Burung nuri terbang ke dahan,Singgah sebentar mencari makan.\nAngka sakti sudah tertahan,Semoga JP jadi kenyataan.",
+    "Ke pasar baru membeli baju,Baju biru indah warnanya.\nNiat hati terus melaju,Angka jitu jadi kuncinya.",
+    "Malam hari bintang bersinar,Cahaya terang di ufuk timur.\nMencari angka janganlah gentar,Rezeki datang saat tertidur.",
+    "Kapal berlayar ke tengah laut,Menerjang ombak tiada henti.\nAngka main janganlah luput,Keberuntungan menanti di hati.",
+    "Pergi ke sawah menanam padi,Padi tumbuh hijau berseri.\nPasanglah angka dengan teliti,Kemenangan mutlak sudah memberi.",
+    "Awan putih berarak tenang,Angin bertiup sepoi bahasa.\nHati mantap pasti menang,Angka pilihan jadi kuasa.",
+    "Gunung tinggi puncaknya biru,Tempat bermukim para dewata.\nAngka keramat sudah menunggu,Menghapus duka menjadi tawa.",
+    "Makan sirih di dalam puan,Sirih dikunyah bersama teman.\nJP paus jadi impian,Angka tarung jadi pedoman.",
+    "Surya muncul di balik bukit,Menyinari bumi dengan perkasa.\nBukan angka sembarang rakit,Tapi angka penembus masa.",
+    "Bunga mawar merah merona,Harum semerbak di taman hati.\nAngka ini sungguh mempesona,Siap meledak sebentar nanti."
   ];
    
   document.getElementById("syair").innerText = syairBanyak[Math.floor(Math.random() * syairBanyak.length)];
